@@ -445,10 +445,10 @@ By this point, cleanup logic should already be built into Tasks 1–4. This task
 ---
 
 
-# 4. Engineering Analysis
+# 3. Engineering Analysis
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### 4.1 Isolation Mechanisms
+### 3.1 Isolation Mechanisms
 Our runtime achieves process and filesystem isolation using three Linux namespace types combined with chroot.
 
 
@@ -469,7 +469,7 @@ Our runtime achieves process and filesystem isolation using three Linux namespac
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### 4.2 Supervisor and Process Lifecycle
+### 3.2 Supervisor and Process Lifecycle
 A long-running parent supervisor is useful because it maintains state across the entire lifetime of all containers. Without it, there would be no process to reap dead children, causing zombies, and no persistent metadata store.
 
 
@@ -490,7 +490,7 @@ A long-running parent supervisor is useful because it maintains state across the
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### 4.3 IPC, Threads, and Synchronization
+### 3.3 IPC, Threads, and Synchronization
 Our project uses two IPC mechanisms:
 
 
@@ -518,7 +518,7 @@ The bounded buffer has three shared variables: `slots[]`, `head`, `tail`, `count
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-### 4.4 Memory Management and Enforcement
+### 3.4 Memory Management and Enforcement
 
 **> What RSS measures:** RSS (Resident Set Size) is the amount of physical RAM currently occupied by a process. It excludes swapped-out pages and shared library pages that aren't loaded.
 
@@ -533,7 +533,7 @@ The bounded buffer has three shared variables: `slots[]`, `head`, `tail`, `count
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### 4.5 Scheduling Behavior
+### 3.5 Scheduling Behavior
 
 Linux uses the Completely Fair Scheduler (CFS) as its default scheduler. CFS aims to give each process a fair share of CPU time proportional to its weight (determined by nice value).
 
@@ -547,7 +547,7 @@ When two CPU-bound containers ran at the same nice value, CFS distributed CPU ti
 ---
 
 
-# 5. Design Decisions and Tradeoffs
+# 4. Design Decisions and Tradeoffs
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -587,7 +587,7 @@ When two CPU-bound containers ran at the same nice value, CFS distributed CPU ti
 ---
 
 
-# 6. Scheduler Experiment Results
+# 5. Scheduler Experiment Results
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
