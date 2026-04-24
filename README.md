@@ -1,5 +1,5 @@
 ---
-OS-Jackfruit -- Custom Linux Container Runtime & Resource Monitor 
+*Custom Linux Container Runtime & Resource Monitor*
 ---
 
 ## 1. Build & Run Instructions
