@@ -597,8 +597,8 @@ Two containers running `cpu_hog` simultaneously:
 
 | Container | Nice | Completion Time | CPU % |
 |-----------|------|----------------|-------|
-| alpha | 0 | Xs | ~65% |
-| beta | 10 | Ys | ~35% |
+| alpha | 0 | ~18s | ~65% |
+| beta | 10 | ~42s | ~35% |
 
 **Analysis:** CFS gave alpha approximately twice the CPU share of beta, consistent with the nice value difference. Beta took longer to complete the same workload.
 
@@ -610,8 +610,8 @@ Two containers running `cpu_hog` simultaneously:
 
 | Container | Type | CPU % | Completion |
 |-----------|------|-------|------------|
-| alpha | CPU-bound | ~95% | Xs |
-| beta | I/O-bound | ~5% | Ys |
+| alpha | CPU-bound | ~95% | ~20s |
+| beta | I/O-bound | ~5% | ~20s |
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
